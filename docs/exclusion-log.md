@@ -17,11 +17,3 @@ Total records excluded: 1,326
 | 6 | Transport/mobility without X-minute framing | Transit, travel-behaviour, or mobility studies not framed around neighbourhood-scale service access |
 | 7 | Ecology/biodiversity/green space without accessibility framing | Environmental or ecological studies of green space, habitat, or vegetation without a service-access or proximity framework |
 | 8 | Housing/land market studies without proximity component | Housing supply, pricing, or land-market analyses without operationalised accessibility or service-proximity measures |
-
-## Note on methodology
-
-Category assignment reflects the recurring patterns observed during
-abstract-level screening. Records were excluded individually with a specific
-rationale in each case; the categories above summarize those individual
-rationales into a smaller number of recurring themes for reporting purposes,
-consistent with PRISMA 2020 guidance on reporting reasons for exclusion.
