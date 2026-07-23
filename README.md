@@ -11,7 +11,7 @@ planning literature, 1992–2026.
 **Contact:** ktaka@aegean.gr
 
 Presented at City+2026: 9th International Conference on Interdisciplinary Urban
-Studies, Mytilene, July 3, 2026.
+Studies, July 3, 2026.
 
 > **Note (temporary):** An anonymized version of this repository for double-anonymized
 > peer review is available at [link — add once generated via anonymous.4open.science].
