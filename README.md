@@ -71,17 +71,33 @@ concept and "equity" as a fast-emerging research dimension since 2022.
 
 ## Reproducing the pipeline
 
-1. `scripts/preprocess.py` — tokenization, lemmatization, DTM construction
-2. `scripts/lda_model.py` — LDA topic modelling (k=6)
-3. `scripts/cooccurrence_network.py` — co-occurrence network construction and
-   Louvain community detection
+Requires Python 3.12 (tested; earlier 3.x likely works but is unverified).
 
+1. Install dependencies:
 ```bash
-pip install -r requirements.txt
-python scripts/preprocess.py
-python scripts/lda_model.py
-python scripts/cooccurrence_network.py
+   pip install -r requirements.txt
 ```
+2. On first run, NLTK will automatically download required tokenizer/stopword/
+   lemmatizer data (`punkt`, `stopwords`, `wordnet`) — this requires an
+   internet connection the first time only.
+3. Place the corpus at `data/abstracts.csv` with at minimum an `abstract`
+   column (see `data/README.md` for how to reconstruct this from the PRISMA
+   protocol, since raw WoS/Scopus text cannot be redistributed).
+4. Run the full pipeline:
+```bash
+   bash scripts/run_pipeline.sh
+```
+   Or run each step individually:
+```bash
+   python3 scripts/preprocess.py --input data/abstracts.csv --outdir results
+   python3 scripts/lda_model.py --outdir results
+   python3 scripts/cooccurrence_network.py --outdir results
+```
+
+All parameters (CountVectorizer max_df/min_df, LDA k/max_iter, co-occurrence
+threshold) default to the values reported in `docs/prisma-protocol.md` and
+the manuscript, and can be overridden via command-line flags — run any
+script with `--help` to see options.
 
 ## Key findings
 
