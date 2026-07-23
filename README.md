@@ -116,9 +116,17 @@ script with `--help` to see options.
 
 ## Software
 
-- Python [add version]
-- scikit-learn [add version]
-- [add: networkx / python-louvain / spaCy / NLTK — whichever you used, with versions]
+- Python 3.12
+- scikit-learn 1.8.0
+- nltk 3.10.0
+- networkx 3.6.1
+- python-louvain 0.16
+- pandas 3.0.2
+- scipy 1.17.1
+- joblib 1.5.3
+
+Exact pinned versions are in `requirements.txt` — install with
+`pip install -r requirements.txt` for a reproducible environment.
 
 ## Data availability
 
