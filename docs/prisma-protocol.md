@@ -8,6 +8,15 @@
 - Filters applied:
   - Language: English
   - Document types: Article, Review Article
+  **Note on document-type classification:** the document-type filter (Article,
+Review Article) was applied via the database vendors' own classification at
+search time. During DOI verification of included records, it was found that
+a small number of records (~9 of 1,027, <1%) classified by Scopus/Web of
+Science as "Article" were, on inspection, published in what read as
+conference-proceedings venues (e.g. eCAADe, ICTTS, Eceee Summer Study). This
+reflects the database vendors' own document-type classification at the time
+of indexing, rather than a screening error, and is disclosed here for
+transparency.
 - Date range: 1992–2026
 - Records identified (raw, combined WoS + Scopus, pre-deduplication): 3,942
 
