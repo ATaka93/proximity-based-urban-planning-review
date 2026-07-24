@@ -3,6 +3,7 @@
 ## Search strategy
 
 - Databases: Web of Science, Scopus
+- Search/export date: 3 January 2026 
 - Search field: Abstract (AB=)
 - Filters applied:
   - Language: English
@@ -23,6 +24,9 @@ OR "proximity-based urban*" OR "self-sufficient urban*" OR "chrono-urbanism")
 - Records after deduplication, proceeding to abstract screening: 2,366
 
 ## Screening
+
+- Screening period: 9 January 2026 – 27 March 2026 (data cleaning and
+  abstract screening conducted concurrently over this window).
 
 Screening was conducted at the abstract level only, without a separate
 title-screening or full-text-screening stage. This choice reflects the aims
@@ -62,10 +66,17 @@ all identified records were accessible without subscription or payment.
 
 ## Limitations of the screening approach
 
+Records from 2026 are under-represented (n=21, versus n=189 for 2025 for instance)
+because the database search/export occurred on 3 January 2026, only three
+days into the year, meaning 2026 publications were largely not yet indexed
+at the time of the search. Temporal trend analyses (e.g. topic dominance
+over time) should interpret the final year of the corpus as a partial-year
+observation rather than a genuine decline in publication volume.
+
 Because eligibility was determined at the abstract level, some borderline
 records may have been mis-classified relative to their full-text content.
 This risk is mitigated by the specificity of the search syntax and the
-exploratory, corpus-level nature of the analysis, which aims to characterise
+exploratory analysis, which aims to characterise
 broad conceptual trends rather than to make claims about individual studies'
 findings or methodological quality.
 
