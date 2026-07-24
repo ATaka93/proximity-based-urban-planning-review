@@ -14,3 +14,6 @@ pandas==3.0.2
 scipy==1.17.1           # sparse matrix support
 joblib==1.5.3           # saving/loading the fitted LDA model
 numpy==2.4.4
+
+#Figures
+matplotlib==3.10.8
