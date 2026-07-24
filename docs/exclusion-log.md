@@ -1,4 +1,4 @@
-# Exclusion Reasons (Abstract Screening)
+# Exclusion Reasons (Abstract Manual Screening)
 
 Following PRISMA 2020 guidance, records excluded at the abstract-screening
 stage are reported here by grouped reason category rather than as an
