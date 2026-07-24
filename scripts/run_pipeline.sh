@@ -7,6 +7,7 @@
 #   3. lda_model.py               -> results/lda_topic_term.csv, lda_doc_topic.csv, lda_model.joblib
 #   4. cooccurrence_network.py    -> results/cooccurrence_edges_pmi.csv, network_communities_pmi.csv
 #   5. network_significance.py    -> results/network_significance.txt
+#   6. temporal_analysis.py       -> results/topic_share_by_year.csv, keyword_frequency_by_year.csv
 #
 # Usage:
 #   bash scripts/run_pipeline.sh
@@ -21,24 +22,28 @@ set -euo pipefail
 INPUT="${1:-data/abstracts.csv}"
 OUTDIR="${2:-results}"
 
-echo "=== Step 1/5: Pre-processing and DTM construction ==="
+echo "=== Step 1/6: Pre-processing and DTM construction ==="
 python3 scripts/preprocess.py --input "$INPUT" --outdir "$OUTDIR"
 
 echo ""
-echo "=== Step 2/5: Statistical model selection (evaluating k) ==="
+echo "=== Step 2/6: Statistical model selection (evaluating k) ==="
 python3 scripts/model_selection.py --dtm "$OUTDIR/dtm.npz" --tokenized "$OUTDIR/tokenized_corpus.csv" --outdir "$OUTDIR"
 
 echo ""
-echo "=== Step 3/5: LDA topic modelling (k=6, 30 iterations) ==="
+echo "=== Step 3/6: LDA topic modelling (k=6, 30 iterations) ==="
 python3 scripts/lda_model.py --dtm "$OUTDIR/dtm.npz" --vocab "$OUTDIR/vocabulary.csv" --outdir "$OUTDIR"
 
 echo ""
-echo "=== Step 4/5: PMI-weighted co-occurrence network + Louvain communities ==="
+echo "=== Step 4/6: PMI-weighted co-occurrence network + Louvain communities ==="
 python3 scripts/cooccurrence_network.py --input "$OUTDIR/tokenized_corpus.csv" --outdir "$OUTDIR"
 
 echo ""
-echo "=== Step 5/5: Network modularity significance testing ==="
+echo "=== Step 5/6: Network modularity significance testing ==="
 python3 scripts/network_significance.py --edges "$OUTDIR/cooccurrence_edges_pmi.csv" --outdir "$OUTDIR"
+
+echo ""
+echo "=== Step 6/6: Temporal trend analysis (topic share & keyword frequency by year) ==="
+python3 scripts/temporal_analysis.py --tokenized "$OUTDIR/tokenized_corpus.csv" --doc-topic "$OUTDIR/lda_doc_topic.csv" --outdir "$OUTDIR"
 
 echo ""
 echo "=== Pipeline complete. Outputs written to $OUTDIR/ ==="
