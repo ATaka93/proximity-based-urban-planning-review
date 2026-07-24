@@ -1,10 +1,11 @@
-#!/usr/bin/env bash
 # run_pipeline.sh
 #
 # Runs the full analysis pipeline end to end, in order:
-#   1. preprocess.py            -> results/dtm.npz, vocabulary.csv, tokenized_corpus.csv
-#   2. lda_model.py              -> results/lda_topic_term.csv, lda_doc_topic.csv, lda_model.joblib
-#   3. cooccurrence_network.py   -> results/cooccurrence_edges.csv, network_communities.csv
+#   1. preprocess.py             -> results/dtm.npz, vocabulary.csv, tokenized_corpus.csv
+#   2. model_selection.py        -> results/model_selection_perplexity.csv, model_selection_coherence.csv
+#   3. lda_model.py               -> results/lda_topic_term.csv, lda_doc_topic.csv, lda_model.joblib
+#   4. cooccurrence_network.py    -> results/cooccurrence_edges_pmi.csv, network_communities_pmi.csv
+#   5. network_significance.py    -> results/network_significance.txt
 #
 # Usage:
 #   bash scripts/run_pipeline.sh
@@ -19,16 +20,8 @@ set -euo pipefail
 INPUT="${1:-data/abstracts.csv}"
 OUTDIR="${2:-results}"
 
-echo "=== Step 1/3: Pre-processing and DTM construction ==="
+echo "=== Step 1/5: Pre-processing and DTM construction ==="
 python3 scripts/preprocess.py --input "$INPUT" --outdir "$OUTDIR"
 
 echo ""
-echo "=== Step 2/3: LDA topic modelling (k=6, 30 iterations) ==="
-python3 scripts/lda_model.py --dtm "$OUTDIR/dtm.npz" --vocab "$OUTDIR/vocabulary.csv" --outdir "$OUTDIR"
-
-echo ""
-echo "=== Step 3/3: Co-occurrence network + Louvain communities (threshold n>=20) ==="
-python3 scripts/cooccurrence_network.py --input "$OUTDIR/tokenized_corpus.csv" --outdir "$OUTDIR"
-
-echo ""
-echo "=== Pipeline complete. Outputs written to $OUTDIR/ ==="
+echo "=== Step 2/5: Statistical model selection
