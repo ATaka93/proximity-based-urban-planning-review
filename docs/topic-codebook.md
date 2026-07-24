@@ -130,6 +130,34 @@ with a minimum co-occurrence count of 5 (see `scripts/cooccurrence_network.py`).
 **Result:** 955 nodes, 75,330 edges, 16.5% density, 4 Louvain communities,
 modularity Q = 0.1764.
 
+## Temporal trends (RQ3)
+
+Computed via `scripts/temporal_analysis.py`, which joins each document's
+dominant topic (from `results/lda_doc_topic.csv`) with its publication year
+and computes (1) the share of each year's corpus dominated by each topic,
+and (2) keyword frequency per 1,000 words by year. Full data:
+`results/topic_share_by_year.csv`, `results/keyword_frequency_by_year.csv`.
+
+T2 (Compact City Policy & Residential Form) was the dominant topic through
+the 1990s–2000s. T1 (X-Minute City & Accessibility) was negligible before
+2018 and grew substantially thereafter — 35.5% of documents by 2023, 46.5%
+by 2024, 51.3% by 2025 — though T4 (Sustainable Design & Policy Strategy)
+remained co-dominant across the same period (24–44% share), so the shift is
+better described as X-minute-city-adjacent topics (T1+T4 combined) becoming
+dominant, rather than a single topic cleanly overtaking another.
+
+Keyword frequency trends are mixed in reliability: "accessibility" and
+"proximity" show clear, near-monotonic growth across the corpus period.
+"Equity" appears too sparsely and inconsistently to support a clean
+emergence narrative and should be treated as a secondary, exploratory
+observation. "Minute" and "walkability" frequencies are volatile
+year-to-year without a clear trend.
+
+Early-year statistics (pre-2010) are based on small yearly samples
+(n=1–18 documents) and 2026 is a partial-year observation (search/export
+conducted 3 January 2026) — both should be interpreted with appropriate
+caution rather than as precise annual estimates.
+
 **Significance:** tested against 20 degree-preserving randomizations
 (`scripts/network_significance.py`): null model mean Q = 0.1215
 (SD = 0.0019), Z = 28.99, p < 0.0001. The observed community structure is
