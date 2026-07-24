@@ -5,7 +5,7 @@ stage are reported here by grouped reason category rather than as an
 individual note per record. This table supports the summary reported in
 `prisma-protocol.md` and the PRISMA flow diagram.
 
-Total records excluded: 1,326
+Total records excluded: 1,339
 
 | # | Exclusion category | Description |
 |---|---|---|
