@@ -1,0 +1,8 @@
+Nodes: 955
+Edges: 75330
+Density: 0.1654
+Communities detected: 4
+Modularity (Q): 0.1764
+
+Note: run network_significance.py to test whether this modularity is
+statistically significant against a degree-preserving random null model.

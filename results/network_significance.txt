@@ -1,0 +1,6 @@
+Observed modularity Q: 0.1764
+Observed communities: 4
+Null model permutations: 20
+Null model mean Q: 0.1215 (SD=0.0019)
+Z-score: 28.99
+Empirical p-value: 0.0000
