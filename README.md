@@ -117,6 +117,7 @@ to see options.
   (T2) Compact City Policy & Residential Form, (T3) Urban Form, Density &
   Emissions, (T4) Sustainable Design & Policy Strategy, (T5) Housing, Green
   Space & Landscape, (T6) Walkability & Health
+  
 - **Four co-occurrence communities**, validated via PMI-weighted network
   construction: X-Minute City, Proximity & Accessibility (n=246);
   Neighbourhood & Residential Density (n=268); Walkability, Active Travel &
@@ -128,9 +129,30 @@ to see options.
   terms load onto the urban-form/density topic (T3), not the
   walkability/health topic (T6) — these are two separate literatures in this
   corpus, not one combined "environment and health" theme
-- **Temporal and keyword-frequency trends** (topic dominance over time,
-  keyword frequency growth) reported in the manuscript are not yet
-  reproduced by a script in this repository — see the RQ3 note above
+  
+- **Temporal shift** (see `results/topic_share_by_year.csv`): T2 (Compact
+  City Policy) dominated the literature through the 1990s–2000s (33–71%
+  share in years with meaningful sample sizes). T1 (X-Minute City &
+  Accessibility) was negligible before 2018 and grew to 35.5% by 2023,
+  46.5% by 2024, and 51.3% by 2025 — a genuine and substantial shift toward
+  X-minute-city framing, though less sharply defined than a single dominant
+  topic overtaking another, since T4 (Sustainable Design & Policy Strategy)
+  remained co-dominant throughout the same period (24–44% share, 2020–2025).
+  Early-year shares (pre-2010, n=1–18 documents/year) should be treated with
+  caution given small sample sizes; 2026 (n=21) is a partial-year
+  observation (see search-date note in `docs/prisma-protocol.md`).
+  
+- **Keyword trends** (see `results/keyword_frequency_by_year.csv`):
+  "accessibility" shows a clear growth trend, from ~2.3 per 1,000 words in
+  2018 to 13.8 per 1,000 words in 2026. "Proximity" similarly grew, from
+  ~1.0 to 7.1 per 1,000 words over the same period. "Equity" is present only
+  sparsely and inconsistently across years (mostly below 2 per 1,000 words
+  even in recent years) — its emergence as a research dimension is weaker
+  and noisier in this corpus than a clean "post-2022 emergence" narrative
+  would suggest, and should be reported with that caveat. "Minute" and
+  "walkability" frequencies are volatile year-to-year without a clean
+  monotonic trend, likely due to topic-specific vocabulary (e.g. "15-minute")
+  being partly absorbed into hyphenation/lemmatization during preprocessing.
 
 ## Software
 
