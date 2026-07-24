@@ -1,7 +1,16 @@
-scikit-learn==1.8.0
-nltk==3.10.0
+# Core NLP pipeline
+scikit-learn==1.8.0    # CountVectorizer, LatentDirichletAllocation
+nltk==3.10.0            # tokenization, stopwords, lemmatization
+gensim==4.4.0           # topic coherence scoring (model_selection.py)
+
+# Network analysis
 networkx==3.6.1
-python-louvain==0.16
+
+# Louvain community detection
+python-louvain==0.16 
+
+# Data handling / utilities
 pandas==3.0.2
-scipy==1.17.1
-joblib==1.5.3
+scipy==1.17.1           # sparse matrix support
+joblib==1.5.3           # saving/loading the fitted LDA model
+numpy==2.4.4
