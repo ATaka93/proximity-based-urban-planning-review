@@ -37,16 +37,66 @@ for pkg in REQUIRED_NLTK:
         nltk.download(pkg, quiet=True)
 
 STOPWORDS = set(stopwords.words("english"))
+
 # Domain-specific stopwords: high-frequency but analytically uninformative
 # terms in this corpus (adjust as needed for your own screening).
-DOMAIN_STOPWORDS = {"study", "paper", "research", "article", "result", "findings"}
+DOMAIN_STOPWORDS = {
+    "study", "paper", "research", "article", "result", "findings",
+    "urban", "city", "cities", "planning", "development", "area", "areas",
+    "also", "using", "used", "use", "based", "results", "find", "found",
+    "approach", "framework", "provide", "provides", "author", "authors",
+    "et", "al", "elsevier", "springer", "taylor", "francis", "rights", "reserved",
+}
+
+# Geographic/place names: this corpus is a case-study literature review, so
+# city and country names recur constantly across abstracts. Left in, they
+# dominate topics as an artifact of geographic sampling rather than
+# reflecting genuine thematic content, so they are excluded here.
+GEOGRAPHIC_STOPWORDS = {
+    "hong", "kong", "china", "beijing", "shanghai", "london", "paris",
+    "barcelona", "italy", "melbourne", "australia", "japan", "tokyo",
+    "seoul", "korea", "india", "singapore", "netherlands", "germany",
+    "usa", "uk", "spain", "sweden", "norway", "portugal", "sydney",
+    "toronto", "canada", "europe", "european", "asian", "asia", "african",
+    "chinese", "american", "australian", "japanese", "korean",
+}
+DOMAIN_STOPWORDS |= GEOGRAPHIC_STOPWORDS
+
+# Generic academic-writing boilerplate: high document-frequency connector,
+# hedge, and meta-discourse words that carry no thematic content and would
+# otherwise dilute topic/network interpretability if left in the vocabulary.
+ACADEMIC_BOILERPLATE = {
+    "across", "could", "due", "several", "issue", "issues", "main", "aspect",
+    "aspects", "related", "important", "significant", "significantly",
+    "including", "may", "number", "level", "levels", "term", "terms",
+    "goal", "goals", "current", "practice", "practices", "growth", "global",
+    "demand", "quality", "opportunity", "opportunities", "promote",
+    "promotes", "necessary", "influence", "gap", "gaps", "insight",
+    "insights", "distribution", "challenge", "challenges", "characteristic",
+    "characteristics", "factor", "factors", "would", "well", "one", "two",
+    "three", "however", "thus", "therefore", "moreover", "furthermore",
+    "within", "among", "various", "different", "particularly", "specific",
+    "context", "role", "key", "potential", "overall", "particular",
+}
+# "within" is retained: it is substantively meaningful in this domain
+# (defines the X-minute-city time threshold, e.g. "within 15 minutes").
+ACADEMIC_BOILERPLATE.discard("within")
+DOMAIN_STOPWORDS |= ACADEMIC_BOILERPLATE
 STOPWORDS |= DOMAIN_STOPWORDS
 
 LEMMATIZER = WordNetLemmatizer()
 
 
 def clean_and_lemmatize(text: str) -> str:
-    """Lowercase, strip non-alphabetic tokens, remove stopwords, lemmatize."""
+    """Lowercase, strip publisher copyright boilerplate, HTML/XML markup
+    artifacts, non-alphabetic tokens, remove stopwords, lemmatize.
+
+    Publisher copyright notices (e.g. "© 2025 Elsevier Ltd.") are commonly
+    appended to the abstract field in Scopus/Web of Science exports and are
+    stripped here, since they are not part of the actual abstract content.
+    """
+    text = re.split(r"©", text)[0]
+    text = re.sub(r"<[^>]+>", " ", text)  # strip tags e.g. CO<inf>2</inf>
     text = text.lower()
     text = re.sub(r"[^a-z\s-]", " ", text)
     tokens = word_tokenize(text)
