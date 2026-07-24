@@ -22,9 +22,10 @@ Citation details and a Zenodo DOI will be added upon publication.
 
 ## Summary
 
-A PRISMA-guided systematic review of 1,040 peer-reviewed publications (screened
+A PRISMA-guided systematic review of 1,027 peer-reviewed publications (screened
 from 2,366) on proximity-based urban planning, analyzed using LDA topic modelling
-(k=6) and Louvain co-occurrence network community detection. The analysis
+(k=6) and a PMI-weighted co-occurrence network with Louvain community detection,
+validated via statistical significance testing. The analysis
 identifies a quantifiable paradigm shift from the compact city framework (T2,
 71% dominance in 2018) to the 15-minute city / proximity planning framework
 (T5, 81% dominance by early 2026), with "accessibility" as a central bridging
