@@ -8,7 +8,8 @@
 - Filters applied:
   - Language: English
   - Document types: Article, Review Article
-  **Note on document-type classification:** the document-type filter (Article,
+
+**Note on document-type classification:** the document-type filter (Article,
 Review Article) was applied via the database vendors' own classification at
 search time. During DOI verification of included records, it was found that
 a small number of records (~9 of 1,027, <1%) classified by Scopus/Web of
