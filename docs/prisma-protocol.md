@@ -10,7 +10,8 @@
 - Date range: 1992–2026
 - Records identified (raw, combined WoS + Scopus, pre-deduplication): 3,942
 
-Search syntax: AB=("minute* cit*" OR "compact cit*" OR "walkable cit*" OR "proximity-based cit*"
+Search syntax:
+AB=("minute* cit*" OR "compact cit*" OR "walkable cit*" OR "proximity-based cit*"
 OR "self-sufficient cit*" OR "minute* urban*" OR "compact urban*" OR "walkable urban*"
 OR "proximity-based urban*" OR "self-sufficient urban*" OR "chrono-urbanism")
 
@@ -48,7 +49,7 @@ all identified records were accessible without subscription or payment.
 
   | Exclusion category | Description |
   |---|---|
-  | No neighbourhood-scale accessibility/proximity component | City-, regional-, or macro-scale studies (e.g. carbon emissions, land-use change, urban sprawl, compactness metrics) that do not operationalise access to daily services or X-minute components |
+  | No neighbourhood-scale accessibility/proximity component | City-, regional-, or macro-scale studies (e.g. carbon emissions, land-use change, urban sprawl, compactness metrics) that do not operationalise access to daily services or X-minute city components |
   | Environmental/climate/thermal focus only | Urban heat island, microclimate, thermal comfort, or air-quality studies with no accessibility or proximity dimension |
   | Conceptual/theoretical/discursive only | Political, critical, or discourse-analytic treatments of the 15-minute city that do not define or measure components empirically |
   | Compact city as contextual label only | Studies that use "compact city" descriptively (e.g. as a study-area label) without analysing it as an urban form or proximity model |
@@ -56,8 +57,8 @@ all identified records were accessible without subscription or payment.
   | Transport/mobility without X-minute framing | Transit, travel-behaviour, or mobility studies not framed around neighbourhood-scale service access |
   | Ecology/biodiversity/green space without accessibility | Environmental or ecological studies of green space, habitat, or vegetation without a service-access or proximity framework |
 
-- Records excluded: 1,326
-- Records included: 1,040
+- Records excluded: 1,339
+- Records included: 1,027
 
 ## Limitations of the screening approach
 
@@ -70,19 +71,21 @@ findings or methodological quality.
 
 ## PRISMA flow diagram
 
-Summary of the flow: Records identified (WoS + Scopus, combined): 3,942
+Summary of the flow:
+Records identified (WoS + Scopus, combined): 3,942
 | duplicates removed: 1,576
 v
 Records screened by abstract: 2,366
-| excluded at abstract screening: 1,326
+| excluded at abstract screening: 1,339
 v
-Records included in final corpus: 1,040
+Records included in final corpus: 1,027
 
 See `prisma-flow-diagram.png` in this folder for the visual version of this
 flow, formatted per PRISMA 2020 guidelines.
 
 ## Topic labelling
 
-Six latent topics (T1–T6) were identified via LDA (k=6). See
-`topic-codebook.md` in this folder for the interpretive labels assigned to
-each topic and the top terms used to justify each label.
+Six latent topics (T1–T6) were identified via LDA (k=6) on the final corpus
+of 1,027 records. See `topic-codebook.md` in this folder for the
+interpretive labels assigned to each topic, the top terms used to justify
+each label, and the statistical justification for k=6.
