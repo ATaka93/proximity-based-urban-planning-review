@@ -9,11 +9,6 @@ planning literature, 1992–2026.
 > **Note (temporary):** This is an anonymized version of the repository for
 > double-anonymized peer review. The full, attributed version will be available upon acceptance.
 
-> **Note (temporary):** An anonymized version of this repository for double-anonymized
-> peer review is available at [link — add once generated via anonymous.4open.science].
-> This full repository is the canonical public version and will remain the reference
-> copy going forward.
-
 ## Status
 
 This repository accompanies a manuscript currently under submission.
