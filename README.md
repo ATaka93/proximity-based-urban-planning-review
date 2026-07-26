@@ -4,11 +4,10 @@ Reproducible NLP pipeline (LDA topic modelling + co-occurrence network analysis)
 mapping the conceptual evolution of the X-minute city / proximity-based urban
 planning literature, 1992–2026.
 
-**Author:** Aikaterini Taka, PhD Student, Department of Geography, University of the Aegean
+**Author information withheld for double-anonymized peer review.**
 
-**Supervisor:** Assoc. Prof. Dimitris Kavroudakis, Department of Geography, University of the Aegean
-
-**Contact:** ktaka@aegean.gr
+> **Note (temporary):** This is an anonymized version of the repository for
+> double-anonymized peer review. The full, attributed version will be available upon acceptance.
 
 > **Note (temporary):** An anonymized version of this repository for double-anonymized
 > peer review is available at [link — add once generated via anonymous.4open.science].
